@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>animate</title>
-	<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>animate</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
 </head>
 <body></body>
 <script type="text/javascript" src="http://aui.github.io/artTemplate/dist/template.js"></script>
 <script id="test" type="text/html">
-	<dl id="content">
-	{{each}}
-		<dd><p data-class="animated animated infinite {{$value}}" class="">{{$value}}</p></dd>
-	{{/each}}
-	</dl>
-	<div id="animate" class="content">
-		<p id="animatEle"></p>
-	</div>
+    <dl id="content">
+        {{each}}
+        <dd>
+            <p data-class="animated animated infinite {{$value}}" class="">{{$value}}</p>
+        </dd>
+        {{/each}}
+    </dl>
+    <div id="animate" class="content">
+        <p id="animatEle"></p>
+    </div>
 </script>
 <script src="js.js"></script>
 </html>

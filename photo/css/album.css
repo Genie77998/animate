@@ -1,0 +1,148 @@
+body, input, li, ol, p, ul,img{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background:#ececec;
+	overflow:hidden
+}
+.section{
+	list-style: none;
+	padding: 5px;
+}
+.section li{
+	float: left;
+	width:49%;
+	height: 120px;
+	margin-top: 5px;
+}
+.section li canvas{
+	width:100%;
+	height: 100%;
+}
+.section li:nth-child(2n+1){
+	margin-right: 2%;
+}
+.section li canvas{
+	border-radius: 5px;
+}
+.clearfix:after {
+	content: "";
+	line-height: 0;
+	margin: 0;
+	clear: both;
+	height: 0;
+	display: block;
+	visibility: hidden;
+}
+.clearfix {
+	zoom: 1;
+}
+.bigbox{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	display: none;
+}
+.picnumbox{
+	position: absolute;
+	bottom: 20px;
+	text-align: center;
+	width:50px;
+	left: 50%;
+	margin-left: -25px;
+	color:#fff;
+	font-size: 12px;
+}
+/* css3 动画 这里针对移动端webkit内核*/
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  animation-name: bounceInRight;
+}
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  70% {
+    -webkit-transform: scale(.9);
+    transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+
+  80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+
+  80% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}

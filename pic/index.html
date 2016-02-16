@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PhotoSwipe</title>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link href="styles.css" type="text/css" rel="stylesheet" />
+	<link href="photoswipe.css" type="text/css" rel="stylesheet" />
+	
+	<script type="text/javascript" src="klass.min.js"></script>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="photoswipe.min.js"></script>
+	
+	<script type="text/javascript">
+
+		var options = {loop:false};
+		var instance;
+		(function(window, $, PhotoSwipe){			
+			$(document).ready(function(){								
+				$("#loadB").bind("click",loadDatas);		
+				bindPhotoSwipe();
+			});
+			
+			/*
+				初始化photoSwipe
+			*/
+			function bindPhotoSwipe(){
+					instance = $("#Gallery a").photoSwipe(options);
+					var size = $("#Gallery a").length;
+					// onDisplayImage
+					instance.addEventHandler(PhotoSwipe.EventTypes.onDisplayImage, function(e){
+						console.log('onDisplayImage{');
+						console.log('onDisplayImage - e.action = ' + e.action);
+						console.log('onDisplayImage - e.index = ' + e.index);
+						console.log(instance.getCurrentImage());
+						console.log('onDisplayImage}');
+					
+						if(e.index==size-1){
+							//到了最后一张图片加载更多数据					
+								alert("加载更多数据中...");
+								detatch();
+								loadDatas();	
+								instance.show(e.index);
+							
+						}
+					});
+							
+			}	
+			/*
+				加载数据
+			*/
+		   function loadDatas(){
+			//add datas
+				for(var i=1;i<6;i++){
+					$("#Gallery").append("<li><a href=\"images/full/00"+i+".jpg\"><img src=\"images/thumb/00"+i+".jpg\" alt=\"Image 00"+i+"\" /></a></li>")
+				}
+				bindPhotoSwipe();
+			}
+			/*
+				解绑
+			*/
+			function detatch(){
+				PhotoSwipe.detatch(instance);
+				PhotoSwipe.activeInstances = [];	
+			}
+			
+		}(window, $, window.Code.PhotoSwipe));
+		
+						
+	</script>
+	
+</head>
+<body>
+
+<div id="MainContent">
+	<div class="page-content">
+		<h1>PhotoSwipe - Jquery</h1>
+	</div>
+	
+	<ul id="Gallery" class="gallery">
+		
+		<li><a href="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/full/001.jpg"><img src="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/thumb/001.jpg" alt="Image 001" /></a></li>
+		<li><a href="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/full/002.jpg"><img src="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/thumb/002.jpg" alt="Image 002" /></a></li>
+		<li><a href="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/full/003.jpg"><img src="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/thumb/003.jpg" alt="Image 003" /></a></li>
+		<li><a href="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/full/004.jpg"><img src="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/thumb/004.jpg" alt="Image 004" /></a></li>
+		<li><a href="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/full/005.jpg"><img src="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/thumb/005.jpg" alt="Image 005" /></a></li>
+		<li><a href="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/full/006.jpg"><img src="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/thumb/006.jpg" alt="Image 006" /></a></li>
+		<li><a href="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/full/007.jpg"><img src="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/thumb/007.jpg" alt="Image 007" /></a></li>
+		<li><a href="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/full/008.jpg"><img src="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/thumb/008.jpg" alt="Image 008" /></a></li>
+		<li><a href="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/full/009.jpg"><img src="http://www.wglong.com/index/plugInDemos/photoSwipe/demo/images/thumb/009.jpg" alt="Image 009" /></a></li>
+		
+		
+	</ul>
+	
+</div>	
+</body>
+</html>

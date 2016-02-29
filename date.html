@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="css/mobiscroll.css">
+	<style>
+		input{
+			width:100%;
+			border:1px solid #ccc;
+			height:40px;
+			line-height:40px;
+			box-sizing: border-box;
+			text-indent: 12px;
+			border-radius:5px;
+			color:#ff7e2e;
+		}
+		#result{
+			line-height:44px;
+		}
+	</style>
+    <title></title>
+</head>
+<body>
+	<input type="text" placeholder="请选择时间" name="dateType">
+	<div id="result">
+		
+	</div>
+</body>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/mobiscroll.min.js"></script>
+<script type="text/javascript">
+	$('[name=dateType]').mobiscroll().date({
+        theme:'android-ics light',
+        mode:'scroller',
+        lang: 'zh',
+        display:'bottom',
+        dateOrder : 'yymmdd',
+        buttons : ['set'],
+        startYear:1980,
+        maxDate:new Date(),
+        buttons : ['set'],
+        callback : function(a){
+        	$('#result').html('您选择的时间为'+a);
+        }
+    });
+
+</script>
+</html>

@@ -26,26 +26,38 @@
     <title></title>
 </head>
 <body>
-	<input type="text" placeholder="请选择时间" name="dateType">
-	<div id="result">
-		
-	</div>
+	<input type="text" placeholder="请选择时间" name="time">
+	<div> </div>
+	<br>
+	<input type="text" placeholder="请选择时间" name="date">
+	<div> </div>
 </body>
 <script type="text/javascript" src="js/zepto.min.js"></script>
 <script type="text/javascript" src="js/mobiscroll.min.js"></script>
 <script type="text/javascript">
-	$('[name=dateType]').mobiscroll().date({
+	$('[name=time]').mobiscroll().time({
         theme:'android-ics light',
         mode:'scroller',
         lang: 'zh',
-        display:'bottom',
-        dateOrder : 'yymmdd',
-        buttons : ['set'],
-        startYear:1980,
-        maxDate:new Date(),
+        display:'modal',
+       	preset: 'date',
+        timeWheels: 'HHii:ss',
+        timeFormat: 'HH:ii:ss',
         buttons : ['set'],
         callback : function(a){
-        	$('#result').html('您选择的时间为'+a);
+        	$('[name=time]').next().html('您选择的时间为'+a);
+        }
+    });
+
+    $('[name=date]').mobiscroll().date({
+        theme:'android-ics light',
+        mode:'scroller',
+        lang: 'zh',
+        display:'modal',
+        dateOrder : 'yymmdd',
+        buttons : ['set'],
+        callback : function(a){
+        	$('[name=date]').next().html('您选择的时间为'+a);
         }
     });
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobiscroll.css">
+    <title>快速报价</title>
+</head>
+
+<body>
+</body>
+<div class="container" id="mainBox">
+    
+</div>
+<script type="text/html" id="reportTmpl">
+    <div class="index_box">
+        <div class="banner">
+            <img src="images/bxad.jpg">
+        </div>
+    </div>
+    <form>
+        <div class="formData">
+            <div class="itemInput">
+                <div class="key">车牌号</div>
+                <div class="dir">
+                    <span class="chooseSf">
+                        <select name="province">
+                            {{each proList}}
+                                <option value="{{$value}}">{{$value}}</option>
+                            {{/each}}
+                        </select>
+                    </span>
+                </div>
+                <div class="value">
+                    <input type="text" name="vehicleNum" data-null="请输入您的车牌号" maxlength="6" data-error="请输入正确的车牌号" data-rule="vehicleNumReg" data-require="true" placeholder="请填写您的车牌号" value="">
+                </div>
+            </div>
+            <div class="itemInput">
+                <div class="key">行驶城市</div>
+                <div class="value arrow">
+                    <select name="cityName">
+                            {{each provinceList as items}}
+                                <optgroup label="{{items}}">
+                                    {{each cityList as all}}
+                                        {{if all.province == items}}
+                                            <option value="{{all.name}}">{{all.name}}</option>
+                                        {{/if}}
+                                    {{/each}}
+                                </optgroup>
+                            {{/each}}
+                        
+                    </select>
+                </div>
+            </div>
+            <div class="itemInput">
+                <div class="key">注册日期</div>
+                <div class="value arrow">
+                    <input type="text" name="reg" placeholder="请选择车辆注册日期" data-require="true" data-null="请选择车辆注册日期" value="" readonly="readonly">
+                </div>
+            </div>
+        </div>
+    </form>
+</script>
+<script data-main="js/index" src="js/require.min.js"></script>
+</html>
+
+
+

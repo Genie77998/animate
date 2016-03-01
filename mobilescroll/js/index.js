@@ -55,5 +55,18 @@ require([
             buttons: ['set'],
             startYear: 1980
         });
+        $('input[name=time]').mobiscroll().time({
+            theme: 'mobiscroll',
+            mode:'scroller',
+            lang: 'zh',
+            display:'modal',
+            preset: 'date',
+            timeWheels: 'HHii:ss',
+            timeFormat: 'HH:ii:ss',
+            buttons : ['set'],
+            callback : function(a){
+                $('[name=time]').next().html('您选择的时间为'+a);
+            }
+        });
     }
 });

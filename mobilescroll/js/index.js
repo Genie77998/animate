@@ -1,15 +1,13 @@
 require([
     'zepto.min',
-    'fastclick',
     'tpl.min',
+    'fastclick',
     'city-list',
     'mobiscroll.min'
 ], function(a, b, FastClick, cityList) {
     var $mainBox = $('#mainBox');
-    window.addEventListener('load', function() {
-        FastClick.attach(document.body);
-    }, false);
     $(function(){
+        FastClick.attach(document.body);
         render();
     });
     function render() {

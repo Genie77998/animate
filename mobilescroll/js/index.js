@@ -9,8 +9,9 @@ require([
     window.addEventListener('load', function() {
         FastClick.attach(document.body);
     }, false);
-    render();
-
+    $(function(){
+        render();
+    });
     function render() {
         var _obj = {
             vehicleNum: '',

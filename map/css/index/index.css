@@ -1,0 +1,230 @@
+body {
+	background: #efeff4;
+}
+
+div {
+	box-sizing: border-box;
+	font-size: 24px;
+}
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 84px;
+	padding: 0 20px;
+	text-align: center;
+	box-shadow: 0px -1px 0px #e4e4e4 inset;
+}
+
+.header_title {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.header_title>img {
+	width: 168px;
+	height: 40px;
+	margin: 22px;
+	vertical-align: middle;
+}
+
+.header_user {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 0;
+	right: 20px;
+	margin: 22px 0;
+	background-image: url(/img/index/idx_user.png);
+	background-repeat: no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+
+.goapp {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	padding: 0 20px;
+	background-color: #FFFFFF;
+	box-shadow: 0px 1px 0px #e4e4e4;
+}
+
+.goapp_text {
+	position: relative;
+	left: 66px;
+	line-height: 100px;
+	font-size: 28px;
+	color: #333333;
+}
+
+.goapp_logo {
+	position: absolute;
+	width: 50px;
+	height: 40px;
+	left: 20px;
+	top: 0;
+	margin: 30px 0;
+	background-image: url(/img/lib/logo_f5285e.png);
+	background-repeat: no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+
+.goapp_close {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: 0;
+	right: 20px;
+	margin: 35px 0;
+	background-image: url(../../img/index/idx_close.png);
+	background-repeat: no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+
+.mycar {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	padding: 12.5px 20px;
+	margin-top: 20px;
+	background-color: #FFFFFF;
+	box-shadow: 0px -1px 0px #e4e4e4 inset;
+}
+
+.mycar_pic {
+	position: absolute;
+	width: 75px;
+	height: 75px;
+	top: 0;
+	left: 20px;
+	margin: 12.5px 0;
+	background-image: url(/img/index/idx_logogray.png);
+	background-repeat: no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+
+.mycar_check {
+	position: relative;
+	left: 80px;
+	height: 75px;
+}
+
+.mycar_checkTip {
+	height: 37.5px;
+	line-height: 37.5px;
+	font-size: 28px;
+	color: #797979;
+}
+
+.mycar_checkInfo {
+	height: 37.5px;
+	line-height: 37.5px;
+	color: #fc4162;
+}
+
+.mycar_checkInfo>span {
+	color: #9a9a9a;
+}
+
+.mycar_count {
+	position: absolute;
+	height: 100%;
+	line-height: 40px;
+	top: 0;
+	right: 20px;
+	padding: 30px 0;
+	color: #a9a9a9;
+}
+
+.mycar_count>span {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+}
+
+.serve {
+	position: relative;
+	display: -webkit-box;
+	display: flex;
+	width: 100%;
+	height: 250px;
+	padding: 8px 0;
+	text-align: center;
+	background-color: #f7f7f7;
+	box-shadow: 0px 1px 0px #e4e4e4;
+}
+
+.serve_item {
+	display: block;
+	-webkit-box-flex: 1;
+	flex: 1;
+	padding-top: 40px;
+	background: #fff;
+}
+
+.serve_item~.serve_item {
+	margin-left: 8px;
+}
+
+.serve_iPic {
+	height: 90px;
+}
+
+.serve_iPic>img {
+	width: 90x;
+	height: 90px;
+}
+
+.serve_iName {
+	height: 50px;
+	line-height: 50px;
+	font-size: 30px;
+	color: #333333;
+}
+
+.serve_iTip {
+	height: 40px;
+	line-height: 40px;
+	color: #999999;
+}
+
+.banner {
+	width: 100%;
+	height: 200px;
+	padding: 20px 0;
+}
+
+.banner_pic {
+	display: block;
+	width: 100%;
+	height: 160px;
+}
+
+.serve1 {
+	position: relative;
+	display: -webkit-box;
+	display: flex;
+	width: 100%;
+	height: 200px;
+	padding: 8px 0;
+	text-align: center;
+	background-color: #f7f7f7;
+	box-shadow: 0px 1px 0px #e4e4e4;
+}
+
+.serve1 .serve_item {
+	padding-top: 30px;
+}
+
+.serve1 .serve_iName {
+	height: 75px;
+	line-height: 75px;
+	font-size: 32px;
+	letter-spacing: 2px;
+}

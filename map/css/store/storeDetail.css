@@ -1,0 +1,260 @@
+body {
+	background: #f6f6f6;
+}
+
+div {
+	box-sizing: border-box;
+	background: #fff;
+}
+.slider_img{
+	width: 750px;
+}
+.store_title{
+	position: relative;
+	overflow: hidden;
+	padding-left: 20px;
+}
+.store_name {
+	font-size: 30px;
+	color: #222222;
+	height: 78px;
+	line-height: 78px;
+}
+
+.store_name .store_tag:first-child {
+	margin-left: 5px;
+}
+.right_arrow{
+	display: block;
+	width: 15px;
+	height: 26px;
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	margin-top: -13px;
+}
+.store_type, .store_state{
+	display: inline-block;
+	background: #f03060;
+	width: 90px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 22px;
+	text-align: center;
+	color: #fff;
+	border:none;
+	border-radius: 4px;
+}
+.store_state{
+	background: #8ddd44;
+	margin-left: 20px;
+}
+.store_time{
+	display: inline-block;
+	margin-left: 20px;
+	font-size: 26px;
+	color: #797979;
+	vertical-align: -1px;
+}
+.store_info{
+	padding-bottom: 20px;
+	border-bottom: 1px solid #eee;
+}
+.addr_ico{
+	width: 44px;
+	height: 38px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 16px;
+}
+.addr_text{
+	color: #007cfc;
+	font-size: 28px;
+	display: inline-block;
+	vertical-align: middle;
+	width: 518px;
+	line-height: 36px;
+}
+.addr_map{
+	display: inline-block;
+	padding: 20px 44px 20px 20px;
+}
+.store_phone img{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+}
+.store_phone{
+	display: inline-block;
+	padding: 20px 26px;
+	vertical-align: -10px;
+}
+.store_phone_split{
+	display: inline-block;
+	border-right: 3px solid #d7d7d7;
+	height: 30px;
+	vertical-align: -8px;
+}
+.store_addr{
+	margin-bottom: 20px;
+}
+.store_serv{
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+.store_cmt, .store_standard{
+	display: block;
+	height: 87px;
+	line-height: 87px;
+	position: relative;
+	overflow: hidden;
+}
+.store_cmt{
+	border-bottom: 1px solid #eee;
+}
+.serve_a_name{
+	color: #424242;
+	font-size: 30px;
+}
+.star_wrap{
+	margin-left: 222px;
+	display: inline-block;
+}
+.store_score{
+	font-size: 28px;
+	color: #fab428;
+	margin-left: 12px;
+}
+.serve_a_text{
+	margin-left: 202px;
+	font-size: 26px;
+	color: #a9a9a9;
+}
+.store_main{
+	overflow: hidden;
+	clear: both;
+	background: #efeff4;
+}
+.main_l{
+	float: left;
+	width: 186px;
+}
+.l_item{
+	text-align: center;
+	height: 86px;
+	line-height: 86px;
+	background: #f5f7f9;
+	color: #797979;
+	font-size: 30px;
+	border-bottom: 1px solid #e4e4e4;
+}
+.l_item_on{
+	color: #fa4c72;
+	background: #fff;
+}
+.main_r{
+	float: left;
+	width: 564px;
+	display: none;
+}
+.main_r_on{
+	display: block;
+}
+.r_title{
+	font-size: 30px;
+	color: #424242;
+	padding: 30px 0 12px;
+}
+.r_info{
+	overflow: hidden;
+}
+.r_text{
+	color: #797979;
+	font-size: 22px;
+	width: 360px;
+	line-height: 26px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.r_item{
+	padding-left: 20px;
+}
+.r_buy{
+	width: 130px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+	background: #fa4c72;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 7px;
+	margin-left: 26px;
+}
+.r_price{
+	padding: 6px 0 16px 0;
+}
+.r_realprice{
+	color: #fa4c72;
+	font-size: 32px;
+}
+.r_origprice{
+	color: #a9a9a9;
+	font-size: 26px;
+	text-decoration:line-through;
+	margin-left: 15px;
+	vertical-align: 1px;
+}
+.coupon_ico{
+	width: 30px;
+	height: 30px;
+	vertical-align: -6px;
+}
+.coupon_text{
+	color: #333;
+	font-size: 26px;
+	margin-left: 16px;
+}
+.r_coupon{
+	padding-bottom: 14px;
+	border-bottom: 1px solid #eee;
+}
+.item_star{
+	vertical-align: 3px;
+	margin-right: 8px;
+}
+.slider_wrap{
+	position: relative;
+	width: 750px;
+	height: 468px;
+	overflow: hidden;
+}
+.slider_img{
+	position: absolute;
+	width: 750px;
+	height: 468px;
+	left: 0;
+	display: none;
+}
+.slider_img:first-child{
+	display: inline;
+}
+.dot_wrap{
+	background: transparent;
+	position: absolute;
+	bottom: 16px;
+	width: 750px;
+	text-align: center;
+}
+.dot{
+	width: 12px;
+	height: 12px;
+	border-radius: 6px;
+	background: #fff;
+	display: inline-block;
+	margin-left: 16px;
+}
+.dot_on{
+	background: #fa4c72;
+}

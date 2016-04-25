@@ -1,0 +1,376 @@
+body {
+	background: #f6f6f6;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+.down_arrow {
+	width: 0;
+	height: 0;
+	border-left: 0.09333rem solid transparent;
+	border-right: 0.09333rem solid transparent;
+	border-top: 0.09333rem solid #a9a9a9;
+	border-bottom: 0;
+	display: inline-block;
+	margin-left: 0.13333333333333333rem;
+	vertical-align: 0.13333333333333333rem;
+}
+
+.filter_wrap {
+	display: -webkit-box;
+	display: box;
+	position: fixed;
+	top: 1.6rem;
+	width: 100%;
+	border-bottom: 0.013333333333333334rem solid #d7d7d7;
+	overflow: hidden;
+	background: #fff;
+	z-index: 3;
+	clear: both;
+}
+
+.filter_item {
+	position: relative;
+	-webkit-box-flex: 1;
+	font-size: 0.4rem;
+	text-align: center;
+	color: #a9a9a9;
+	cursor: pointer;
+	padding: 0.32rem 0;
+}
+
+.filter_item~.filter_item:before {
+	content: '|';
+	position: absolute;
+	left: 0;
+}
+
+.filter_item_on {
+	color: #ff004a;
+}
+
+.filter_item_on .down_arrow {
+	border-left: 0.09333rem solid transparent;
+	border-right: 0.09333rem solid transparent;
+	border-bottom: 0.09333rem solid #FF004A;
+	border-top: 0;
+}
+
+
+/*门店列表*/
+
+.shop_wrap {
+	overflow: hidden;
+	margin-top: 1.0933333333333333rem;
+}
+
+.shop_item {
+	position: relative;
+	margin-top: 0.26666666666666666rem;
+	border-width: 0.013333333333333334rem 0;
+	background: #fff;
+	cursor: pointer;
+	border-top: 0.013333333333333334rem solid #d7d7d7;
+	border-bottom: 0.013333333333333334rem solid #d7d7d7;
+}
+
+.shop_title {
+	height: 1.0266666666666666rem;
+	line-height: 1.0266666666666666rem;
+	margin-left: 0.26666666666666666rem;
+	padding-right: 0.26666666666666666rem;
+}
+
+.shop_name {
+	font-size: 0.4rem;
+	color: #222222;
+}
+
+.shop_ico {
+	display: inline-block;
+	width: 0.5333333333333333rem;
+	height: 0.5333333333333333rem;
+	vertical-align: middle;
+	padding-right: 0.06666666666666667rem;
+	background-image: url(/img/store/shop_ico.png);
+	background-repeat: no-repeat;
+}
+
+.shop_tag {
+	display: inline-block;
+	width: 0.4rem;
+	height: 0.4rem;
+	vertical-align: middle;
+}
+
+.tag_4s {
+	background-image: url(/img/store/tag_4s.png);
+}
+
+.tag_bao {
+	background-image: url(/img/store/tag_bao.png);
+}
+
+.tag_mei {
+	background-image: url(/img/store/tag_mei.png);
+}
+
+.tag_shang {
+	background-image: url(/img/store/tag_shang.png);
+}
+
+.tag_tai {
+	background-image: url(/img/store/tag_tai.png);
+}
+
+.shop_name .shop_tag:first-child {
+	margin-left: 0.06666666666666667rem;
+}
+
+.shop_main {
+	height: 2.24rem;
+	padding: 0.26666666666666666rem 0.26666666666666666rem 0.26666666666666666rem 0;
+	margin-left: 0.26666666666666666rem;
+	border-top: 0.013333333333333334rem solid #D7D7D7;
+	border-bottom: 0.013333333333333334rem solid #d7d7d7;
+}
+
+.shop_pic {
+	float: left;
+	position: relative;
+}
+
+.shop_img {
+	width: 2.4rem;
+	height: 1.7066666666666668rem;
+}
+
+.shop_flag {
+	display: block;
+	position: absolute;
+	top: -0.09333333333333334rem;
+	left: -0.09333333333333334rem;
+	width: 1.1733333333333333rem;
+	height: 1.1733333333333333rem;
+}
+
+.shop_info {
+	float: left;
+	padding-left: 0.26666666666666666rem;
+	display: -webkit-box;
+	display: box;
+	height: 1.7066666666666668rem;
+	-webkit-box-orient: vertical;
+	font-size: 0.3466666666666667rem;
+	width: 7.066666666666666rem;
+}
+
+.shop_info_div {
+	position: relative;
+	-webkit-box-flex: 1;
+}
+
+.info_addr {
+	font-size: 0.4rem;
+	color: #444;
+}
+
+.info_star {
+	display: inline-block;
+	width: 1.9466666666666668rem;
+	height: 0.3466666666666667rem;
+	background-image: url(/img/store/star_gray.png);
+	vertical-align: middle;
+}
+
+.star_img {
+	display: block;
+	height: 0.3466666666666667rem;
+	width:1.7333333333333334rem;
+	overflow: hidden;
+}
+
+.info_score {
+	color: #fa9900;
+	vertical-align: middle;
+}
+
+.info_cmt {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.info_dist {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.shop_goods {
+	height: 1.2rem;
+	margin: 0 0.26666666666666666rem;
+	border-bottom: 0.013333333333333334rem solid #d7d7d7;
+}
+
+.goods_title {
+	float: left;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: 0.37333333333333335rem;
+}
+
+.goods_price {
+	float: right;
+	font-size: 0.37333333333333335rem;
+	color: #f03060;
+	padding: 0.22666666666666666rem 0;
+}
+
+.goods_pay {
+	display: inline-block;
+	width: 1.7333333333333334rem;
+	height: 0.7466666666666667rem;
+	line-height: 0.7466666666666667rem;
+	background-color: #f03060;
+	color: #FFFFFF;
+	text-align: center;
+	margin-left: 0.13333333333333333rem;
+	border-radius: 0.06666666666666667rem;
+	font-size: 0.37333333333333335rem;
+	letter-spacing: 0.04rem;
+}
+
+.shop_favor {
+	height: 1.2rem;
+	line-height: 1.2rem;
+	margin: 0 0.26666666666666666rem;
+	font-size: 0.37333333333333335rem;
+	border-bottom: 0.013333333333333334rem solid #d7d7d7;
+}
+
+.shang_ico {
+	background-color: #2aa4ff;
+	color: #ffffff;
+}
+
+.shop_item>div:last-child {
+	border-bottom: none;
+}
+
+.black_cover {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.6;
+	z-index: 2;
+	display: none;
+}
+
+.pop {
+	position: fixed;
+	top: 1.1rem;
+	left: 0;
+	background: #fff;
+	width: 100%;
+	overflow: auto;
+	z-index: 3;
+	display: none;
+}
+
+
+/*.pop_area {
+	height: 7.573333333333333rem;
+}*/
+
+.area_item,
+.type_item {
+	color: #333;
+	font-size: 0.3466666666666667rem;
+	padding-left: 0.26666666666666666rem;
+	height: 0.9333333333333333rem;
+	line-height: 0.9333333333333333rem;
+	border-bottom: 0.013333333333333334rem solid #d7d7d7;
+	cursor: pointer;
+}
+
+.area_item_on {
+	color: #ff004a;
+	background: #f3f5f7;
+}
+
+.pop_service {
+	overflow: hidden;
+}
+
+.service1_wrap {
+	float: left;
+	width: 5rem;
+}
+
+.service2_wrap {
+	float: left;
+	width: 5rem;
+	background: #f4f5f7;
+}
+
+.si1 {
+	border: 0.013333333333333334rem solid #d7d7d7;
+	border-width: 0 0.013333333333333334rem 0.013333333333333334rem 0;
+	font-size: 0.3466666666666667rem;
+	color: #333;
+	line-height: 0.9333333333333333rem;
+	height: 0.9333333333333333rem;
+	padding-left: 0.26666666666666666rem;
+	cursor: pointer;
+}
+
+.si1_on {
+	background: #f3f5f7;
+	border-right: 0;
+	color: #FF004A;
+}
+
+.si2 {
+	font-size: 0.3466666666666667rem;
+	color: #333;
+	line-height: 0.9333333333333333rem;
+	height: 0.9333333333333333rem;
+	padding-left: 0.26666666666666666rem;
+	border-bottom: 0.013333333333333334rem solid #d7d7d7;
+	cursor: pointer;
+	background: #f4f5f7;
+}
+
+.filter_text {
+	display: inline-block;
+	max-width: 2.8rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 1.1;
+}
+
+.loading {
+	width: 100%;
+	height: 1.0933333333333333rem;
+	text-align: center;
+	background: #fff;
+	line-height: 1.0933333333333333rem;
+	margin-top: 0.26666666666666666rem;
+	font-size: 0.29333333333333333rem;
+	color: #424242;
+	display: none;
+}
+
+.loading img {
+	width: 0.48rem;
+	height: 0.48rem;
+	z-index: 3;
+	vertical-align: middle;
+}

@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/lib/reset.css">
+		<link rel="stylesheet" href="css/lib/common.css">
+		<script type="text/javascript">!function(a,b){var d,c=function(){var a=32,c=b.documentElement,d=c.clientWidth;d&&(c.style.fontSize=a*(d/320)+"px")};b.addEventListener&&(d="orientationchange"in a?"orientationchange":"resize",a.addEventListener(d,c,!1),b.addEventListener("DOMContentLoaded",c,!1),c())}(window,document);</script>
+		<title>浙商财富中心</title>
+
+<link rel="stylesheet" href="css/lib/loading.css">
+<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css" />
+<style>
+.bodypad {
+    padding: 0;
+}
+.amap-logo,
+.amap-copyright {
+    display: none;
+}
+.amap-icon img {
+    width: 26px;
+}
+._box {
+    background: rgba(0, 0, 0, .6);
+    z-index: 99999;
+    color: white;
+    width: 240px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 8px 60px 8px 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+._box:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 16px solid rgba(0, 0, 0, .6);
+    bottom: -16px;
+    right: 50%;
+    position: absolute;
+}
+._text h3,
+._text p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+._text h3 {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 24px;
+}
+._text p {
+    font-size: 12px;
+}
+._box .btns {
+    display: block;
+    background-color: #e62d46;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 56px;
+    height: 100%;
+    border-radius: 0 5px 5px 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAM1BMVEX////////////////////////////////////////////////////////////////////lEOhHAAAAEHRSTlMAECAwQFBgcICQoLDA0ODwVOCoyAAAALhJREFUKM91kkESgyAQBEcDQnCF/v9rc1CMutg3WIphupBemL+tvYxCAcbDxQDIfjKlCpQA8yAKWp5UKKOoukiaIPgo2/cy5qN6TmPxUf0Sqo/qVJKP6qdpkyTFW9SB8ZUkAbBZTuHzf0EXEFdrHFTbD9wFhJiLNdjLOQGSpLQXuAs4gaeAC43PTcCjQrgIeFBIpwBHJp8CHBGbBz+gO938D7h0GQroXcYCji5jAZKk9UXA8dx4Wf0ARGgKT9OSHhkAAAAASUVORK5CYII=');
+    background-repeat: no-repeat;
+    background-size: 15px auto;
+    background-position: 4px center;
+}
+._box .btns span {
+    transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    right: 0;
+    display: block;
+    text-align: right;
+    padding-right: 5px;
+}
+</style>
+<div id="LoadingBox" class="loading--fullscreen"><div class="box"><h3><span></span></h3><p style="">拼命加载中...</p></div></div>
+ </head>
+<body class="bodypad">
+<header class="comm-header" id="comm-header">
+	<span class="com-header-btn com-header-btn-left common-header-back">返回</span>
+	<h3>浙商财富中心</h3>
+	<span class="com-header-btn com-header-btn-right"></span>
+</header>
+
+<div id="container"></div>
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=54fc62482846dee91325d5b4ac78ab14&plugin=AMap.Driving"></script>
+<script type="text/javascript">
+    var win = window,
+        doc = document,
+        QccrSetmsg = function(options) {
+            options = options || {};
+            for ( var i in options ) {
+                this.options[i] = options[i];
+            }
+            this.init();
+        }
+
+        QccrSetmsg.prototype = {
+            constructor: QccrSetmsg,
+            init : function() {
+                this.creatStyle().creatDivs();
+            },
+            isFunction : function(fn) {
+                return fn && fn.constructor === Function ? !0 : !1;
+            },
+            creatStyle : function() {
+                var _id = 'SetmsgStyle',
+                    _me = this;
+                if (!doc.getElementById(_id)) {
+                    var style = doc.createElement('style'),
+                        _cssText = ".msg-tip{position:fixed;z-index:99999999;width:100%;display:flex;justify-content:center;left:50%;top:50%;transform:translate(-50%, -50%);transition:all 200ms ease}.msg-tip__text{display:block;max-width:90%;background-color:rgba(0,0,0,0.77);line-height:.6rem;padding:.2rem .4rem;border-radius:5px;color:#fff;font-size:.38rem;word-wrap:break-word;word-break:break-all}.msg-tip-enter{opacity:0;transform: translate(-50%,-30%);}.msghide{display:none;}";
+                    style.type = "text/css";
+                    style.id = _id;
+                    style.styleSheet ? style.styleSheet.cssText = _cssText : style.innerHTML = _cssText
+                    doc.getElementsByTagName('head')[0].appendChild(style);
+                }
+                return this;
+            },
+            hasClass : function(e, c) {
+                var re = new RegExp("(^|\\s)" + c + "(\\s|$)");
+                return re.test(e.className);
+            },
+            addClass : function(e, c) {
+                if ( this.hasClass(e, c) ) {
+                    return;
+                }
+                var newclass = e.className.split(' ');
+                newclass.push(c);
+                e.className = newclass.join(' ');
+            },
+            removeClass : function(e, c) {
+                if ( !this.hasClass(e, c) ) {
+                    return;
+                }
+
+                var re = new RegExp("(^|\\s)" + c + "(\\s|$)", 'g');
+                e.className = e.className.replace(re, ' ');
+            },
+            creatDivs : function() {
+                var _me = this,
+                    _id = 'msgTipBox';
+                if (!doc.getElementById(_id)) {
+                    var _div = doc.createElement('div');
+                    var _span = doc.createElement('span');
+                    _span.className = 'msg-tip__text';
+                    _div.id = _id;
+                    _div.className = 'msg-tip msg-tip-enter msghide';
+                    _div.appendChild(_span);
+                    doc.body.appendChild(_div);
+                    _me.box = _div;
+                    _me.text = _span;
+                }
+                return this;
+            },
+            setMsg : function(msg,callback){
+                var _me = this;
+                if(this.timer){
+                    clearTimeout(this.timer);
+                }
+                if(!msg){return}
+                this.text.innerHTML = msg;
+                this.removeClass(this.box,'msghide');
+                this.removeClass(this.box,'msg-tip-enter');
+                this.timer = setTimeout(function(){
+                    _me.addClass(_me.box,'msg-tip-enter');
+                    setTimeout(function(){
+                        _me.isFunction(callback) && callback();
+                        _me.addClass(_me.box,'msghide');
+                    },500);
+                },2500)
+                return this;
+            }
+        }
+</script>
+<script type="text/javascript">
+var _setMsg = new QccrSetmsg();
+document.getElementById('comm-header').getElementsByTagName('span')[0].onclick = function() {
+    history.go(-1);
+}
+var position = [120.100630,30.270929];
+var map = new AMap.Map("container", {
+    resizeEnable: true,
+    center: position, //地图中心点
+    zoom: 16 //地图显示的缩放级别
+});
+var marker = new AMap.Marker({ //添加自定义点标记
+    map: map,
+    position: position, //基点位置
+    offset: new AMap.Pixel(-100, -90), //相对于基点的偏移位置
+    draggable: false, //是否可拖动
+    content: '<div class="_box"><div class="_text"><h3>浙商财富中心</h3><p>杭州市西湖区莲花街264号</p></div><div class="btns"><span>导航</span></div></div>' //自定义点标记覆盖物内容
+});
+var icons = new AMap.Marker({
+    map: map,
+    position: position, //基点位置
+    icon: new AMap.Icon({
+        size: new AMap.Size(42, 58), //图标大小
+        image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAA6CAMAAADxyzvyAAAAzFBMVEXmLUb////mLUbmLUbmLUbmLUbmLUbmLUbmLUbmLUbmLUbmLUbmLUbmLUbmLUbmLUbmLUbmLUbmL0jnMkrnOVHpQ1rpRlzqS2DqUGTqUWbrVGjrVmrrWWzrW2/sXnHsYHPsY3XtZXftanzub4DucYLvdofveYnve4vwgI/wg5HxiJbxipjxjZryj5zykZ/ylKHylqL1qbT2sbr3uMH3vcX3wMf4wsn4xcv5zNL5ztT62N372t774eX96+798PL+8/T+9fb++Pj++vv//f3zUF5hAAAAEXRSTlMAABAgMEBQYHCAkKCwwNDg8InUWv0AAAH4SURBVEjHjdXZdpswEAbgEWADDtt0b3Cb1Fma2nFduqW7Y/73f6degAAJCfRfwfF3MEijGSIlfpRkzMzMWRL5RESiiwLDlslkoYWGOY+Shwbqp2xM6ut0WbAlxVKlIU8kHNJJKW3z7zyTpaR+MUcLv6UpzyZtaMgOCYUgotyF5kI4PpQ5FESZG80E+ewYnyJXGlHiSpPBq36DIV/7l6Xu8i2MWXegpz/M9GFMNwC+l1oeAFzq9MkvoD7XP+W8Bn7q9BZANf7szwA2Kn36Bzg+H9NnZVm+kLQpli2Aw0zBtFvwG6h3d5ZctVvQbOz6CGv+vm43Nmgef3myyX/tugRdZd/Y5FrWNnWl9Upf//ILgOMbWViCyLOd1wOAxwt5Zj1BRLH87WVVVdWdvNsDeHwn7+LmcHd1uAOA+16eNv1xaWhQKHYnr05XXcsIZCPqD819a3cA6uv+sHQ9S/T9ZQ8A2y2A+lbpLZIOutZeLuh7tWNJKgZ942MjP5j7qxAiUdcT28FRFSodbsShW7F28VUqhu3400FvwwoVK/P2rgxzyzM2z9wzjbiFiS7MgzMey9g2Y0etNrOO40CngZXqrxDbh7w2l1KaosNpV/iTdNjvI5qmfcNPaI7Kuim8WSrH+JLmKZ0xM5+RC/Vy5txzorRgXpAbpdWKDPQ/obCk6520w24AAAAASUVORK5CYII=",
+        imageOffset: new AMap.Pixel(8, 11)
+    })
+});
+marker.on('click', function() {
+        var geolocation;
+        map.plugin('AMap.Geolocation', function() {
+            geolocation = new AMap.Geolocation({
+                enableHighAccuracy: true, //是否使用高精度定位，默认:true
+                timeout: 10000
+            });
+            geolocation.getCurrentPosition();
+            AMap.event.addListener(geolocation, 'complete', onComplete); //返回定位信息
+            AMap.event.addListener(geolocation, 'error', onError); //返回定位出错信息
+        });
+        //解析定位结果
+        function onComplete(data) {
+            console.log(position,data);
+            var _map = new AMap.Map("container", {
+                resizeEnable: true,
+                center: position,//地图中心点
+                zoom: 16 //地图显示的缩放级别
+            });
+            //构造路线导航类
+            var driving = new AMap.Driving({
+                map: _map
+            }); 
+            // 根据起终点经纬度规划驾车导航路线
+            driving.search(new AMap.LngLat(data.position.lng,data.position.lat), new AMap.LngLat(120.100630,30.270929));
+        }
+        //解析定位错误信息
+        function onError(data) {
+            _setMsg.setMsg('定位失败');
+        }
+        //location.href = "http://m.amap.com/navi/?start=&dest=120.100630,30.270929&destName=浙商财富中心&naviBy=&key=54fc62482846dee91325d5b4ac78ab14";
+});
+document.getElementById('LoadingBox').style.display = 'none';
+</script>
+</body>
+</html>
+

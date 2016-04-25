@@ -1,0 +1,71 @@
+.navBot {
+	position: relative;
+	width: 100%;
+	height: 295px;
+	padding: 0 20px;
+	font-size: 28px;
+	bottom: 0;
+}
+.navBot div{
+	font-size: 28px;
+}
+
+.navBot_site {
+	width: 100%;
+	height: 66px;
+	line-height: 66px;
+	color: #999999;
+}
+
+.navBot_sText {
+	font-size: 28px;
+}
+
+.navBot_sLevel {
+	color: #0D66FF;
+}
+
+.navBot_mode {
+	display: -webkit-box;
+	display: flex;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+}
+
+.navBot_mItem {
+	display: block;
+	border: 1px solid #f01e50;
+	-webkit-box-flex: 1;
+	flex: 1;
+	margin: 15px 25px;
+	line-height: 70px;
+	border-radius: 5px;
+	font-size: 28px;
+	color: #f01e50;
+}
+
+.navBot_react {
+	display: -webkit-box;
+	display: flex;
+	width: 100%;
+	height: 110px;
+	text-align: center;
+}
+
+.navBot_rItem {
+	position: relative;
+	display: block;
+	-webkit-box-flex: 1;
+	flex: 1;
+	line-height: 110px;
+	font-size: 28px;
+	color: #535353;
+}
+
+.navBot_rItem~.navBot_rItem:before {
+	content: "|";
+	position: absolute;
+	left: 0;
+	color: #cecece;
+}

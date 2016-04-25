@@ -85,6 +85,15 @@
     text-align: right;
     padding-right: 5px;
 }
+._iframe{
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding:0;
+    margin:0;
+    padding-top:1.5rem;
+    box-sizing: border-box;
+}
 </style>
 <div id="LoadingBox" class="loading--fullscreen"><div class="box"><h3><span></span></h3><p style="">拼命加载中...</p></div></div>
  </head>
@@ -186,9 +195,22 @@
         }
 </script>
 <script type="text/javascript">
-var _setMsg = new QccrSetmsg();
+var _setMsg = new QccrSetmsg(),
+    _conent = document.getElementById('container'),
+    _title = document.getElementById('comm-header').getElementsByTagName('h3')[0],
+    _flag = true;
 document.getElementById('comm-header').getElementsByTagName('span')[0].onclick = function() {
-    history.go(-1);
+    if(_flag){
+        history.go(-1);
+    }else{
+        var _iframe = document.getElementsByTagName('iframe');
+        if(_iframe.length == 1){
+            _conent.style.display = 'block';
+            _iframe[0].style.display = "none";
+            _flag = true;
+            _title.innerHTML = document.title;
+        }
+    }
 }
 var position = [120.100630,30.270929];
 var map = new AMap.Map("container", {
@@ -225,13 +247,25 @@ marker.on('click', function() {
         });
         //解析定位结果
         function onComplete(data) {
-             location.href = "http://m.amap.com/navi/?start="+data.position.lng+","+data.position.lat+"&dest=120.100630,30.270929&destName=浙商财富中心&naviBy=car&key=54fc62482846dee91325d5b4ac78ab14";
+            var _iframe = document.getElementsByTagName('iframe');
+            if(_iframe.length == 0){
+                _iframe = document.createElement('iframe');
+                _iframe.className = '_iframe';
+                _iframe.src = "http://m.amap.com/navi/?start="+data.position.lng+","+data.position.lat+"&dest=120.100630,30.270929&destName=浙商财富中心&naviBy=car&key=54fc62482846dee91325d5b4ac78ab14";
+                document.body.appendChild(_iframe);
+            }else{
+                _iframe = _iframe[0];
+                _iframe.src = "http://m.amap.com/navi/?start="+data.position.lng+","+data.position.lat+"&dest=120.100630,30.270929&destName=浙商财富中心&naviBy=car&key=54fc62482846dee91325d5b4ac78ab14";
+            }
+            _title.innerHTML = '路线详情';
+            _flag = false;
+            _iframe.style.display = 'block';
+            _conent.style.display = 'none';
         }
         //解析定位错误信息
         function onError(data) {
             _setMsg.setMsg('定位失败');
         }
-       
 });
 document.getElementById('LoadingBox').style.display = 'none';
 </script>

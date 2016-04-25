@@ -213,7 +213,6 @@ var icons = new AMap.Marker({
     })
 });
 marker.on('click', function() {
-        /*
         var geolocation;
         map.plugin('AMap.Geolocation', function() {
             geolocation = new AMap.Geolocation({
@@ -226,25 +225,13 @@ marker.on('click', function() {
         });
         //解析定位结果
         function onComplete(data) {
-            console.log(position,data);
-            var _map = new AMap.Map("container", {
-                resizeEnable: true,
-                center: position,//地图中心点
-                zoom: 16 //地图显示的缩放级别
-            });
-            //构造路线导航类
-            var driving = new AMap.Driving({
-                map: _map
-            }); 
-            // 根据起终点经纬度规划驾车导航路线
-            driving.search(new AMap.LngLat(data.position.lng,data.position.lat), new AMap.LngLat(120.100630,30.270929));
+             location.href = "http://m.amap.com/navi/?start="+data.position.lng+","+data.position.lat+"&dest=120.100630,30.270929&destName=浙商财富中心&naviBy=car&key=54fc62482846dee91325d5b4ac78ab14";
         }
         //解析定位错误信息
         function onError(data) {
             _setMsg.setMsg('定位失败');
         }
-        */
-        location.href = "http://m.amap.com/navi/?start=&dest=120.100630,30.270929&destName=浙商财富中心&naviBy=&key=54fc62482846dee91325d5b4ac78ab14";
+       
 });
 document.getElementById('LoadingBox').style.display = 'none';
 </script>

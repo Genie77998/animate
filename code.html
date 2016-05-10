@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+		body{
+			background:#f1f1f1;
+		}
+			.ewmImg{
+				text-align:center;
+				padding:100px 30px;
+			}
+		</style>
+</head>
+<body>
+	<p id="qrcodeNum" data-code="林余群，我爱你"></p>
+	<p class="ewmImg" id="qrcode"></p>
+</body>
+<script type="text/javascript" src="js/QRCode.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		var qrcode = new QRCode(document.getElementById("qrcode"), {
+	        colorDark: "green",
+	        colorLight: "pink",
+	        correctLevel: QRCode.CorrectLevel.L
+	      });
+		qrcode.makeCode(document.getElementById('qrcodeNum').getAttribute('data-code'));
+	}
+</script>
+</html>
